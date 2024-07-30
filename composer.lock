@@ -1,0 +1,70 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "5a7e339fa8512dfeb89f1f94d9985513",
+    "packages": [
+        {
+            "name": "clarion-app/multichain",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/clarion-app/multichain.git",
+                "reference": "851e3feef7a048fbcd5d96e1bd9e127bd420e9da"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/clarion-app/multichain/zipball/851e3feef7a048fbcd5d96e1bd9e127bd420e9da",
+                "reference": "851e3feef7a048fbcd5d96e1bd9e127bd420e9da",
+                "shasum": ""
+            },
+            "default-branch": true,
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "ClarionApp\\MultiChain\\MultiChainProvider"
+                    ],
+                    "aliases": {
+                        "MultiChain": "ClarionApp\\MultiChain\\Facades\\MultiChain"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "App\\": "app/",
+                    "ClarionApp\\MultiChain\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Tim Schwartz",
+                    "email": "tim@metaverse.systems"
+                }
+            ],
+            "description": "PHP package for communicating with MultiChain RPC server",
+            "support": {
+                "issues": "https://github.com/clarion-app/multichain/issues",
+                "source": "https://github.com/clarion-app/multichain/tree/main"
+            },
+            "time": "2024-07-30T01:48:34+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": {
+        "clarion-app/multichain": 20
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": [],
+    "plugin-api-version": "2.6.0"
+}
