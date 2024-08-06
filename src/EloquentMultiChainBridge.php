@@ -75,7 +75,11 @@ trait EloquentMultiChainBridge
     public static function getModelStream()
     {
         $c = new static();
-        if(isset($c->stream)) return $c->stream;
+        if(isset($c->stream))
+        {
+            self::createStream($c->stream);
+            return $c->stream;
+        }
 
         $className = get_class($c);
         $stream = DataStreamRegistry::where('class_name', $className)->first();
@@ -83,7 +87,21 @@ trait EloquentMultiChainBridge
         {
             throw new ErrorException("$className is not registered to a data stream.");
         }
+        self::createStream($stream->data_stream);
         return $stream->data_stream;
+    }
+
+    public static function createStream($stream)
+    {
+        try
+        {
+            $results = MultiChain::liststreams($stream);
+        }
+        catch (Exception $e)
+        {
+            MultiChain::create('stream', $stream, false);
+            MultiChain::subscribe($stream);
+        }
     }
 
     protected function serializeDate(DateTimeInterface $date)
