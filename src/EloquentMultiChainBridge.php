@@ -19,6 +19,7 @@ trait EloquentMultiChainBridge
     {
         $this->keyType = "string";
         $this->incrementing = false;
+        $this->dateFormat = 'Y-m-d H:i:s';
     }
 
     public static function boot()
