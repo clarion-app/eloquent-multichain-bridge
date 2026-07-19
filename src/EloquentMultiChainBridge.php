@@ -28,7 +28,9 @@ trait EloquentMultiChainBridge
 
         self::creating(function ($model) 
         {
-            $model->id = (string) Str::uuid();
+            if (empty($model->id)) {
+                $model->id = (string) Str::uuid();
+            }
         });
 
         self::created(function($model)
